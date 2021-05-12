@@ -14,3 +14,6 @@ export function inArray(array1: string[], array2: string[]): string[] {
 export function bouncingBall(h: number, bounce: number, window: number): number {
   // See "bouncing ball" in instructions
 }
+export function longest(s1: string, s2: string): string {
+  // See "longest" in instructions
+}

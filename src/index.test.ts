@@ -8,6 +8,7 @@ import {
   inArray,
   includesAllLetters,
   bouncingBall,
+  longest,
 } from './index'
 
 describe('Array manipulation', () => {
@@ -72,5 +73,12 @@ describe('Bouncing balls', () => {
     expect(bouncingBall(30.0, 0.66, 1.5)).toEqual(15)
     expect(bouncingBall(30, 0.75, 1.5)).toEqual(21)
     expect(bouncingBall(30, 0.4, 10)).toEqual(3)
+  })
+})
+describe('longest', () => {
+  it('Basic tests', () => {
+    expect(longest('aretheyhere', 'yestheyarehere')).toEqual('aehrsty')
+    expect(longest('loopingisfunbutdangerous', 'lessdangerousthancoding')).toEqual('abcdefghilnoprstu')
+    expect(longest('inmanylanguages', 'theresapairoffunctions')).toEqual('acefghilmnoprstuy')
   })
 })

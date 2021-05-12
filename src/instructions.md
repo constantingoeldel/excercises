@@ -47,3 +47,12 @@ The ball can only be seen if the height of the rebounding ball is strictly great
 - h = 3, bounce = 1, window = 1.5, result is -1
 
 (Condition 2) not fulfilled).
+
+## Longest
+
+Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters - each taken
+only once - coming from s1 or s2. Examples:
+
+a = "xyaabbbccccdefww" b = "xxxxyyyyabklmopq" longest(a, b) -> "abcdefklmopqwxy"
+
+a = "abcdefghijklmnopqrstuvwxyz" longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"

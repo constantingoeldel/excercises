@@ -1,4 +1,14 @@
-import { concatenateArrays, getMiddleValue, getNumTrues, getNumTruesWithReducer, getUniqueValues, includesAllLetters } from './index'
+import {
+  camelCase,
+  concatenateArrays,
+  getMiddleValue,
+  getNumTrues,
+  getNumTruesWithReducer,
+  getUniqueValues,
+  inArray,
+  includesAllLetters,
+  bouncingBall,
+} from './index'
 
 describe('Array manipulation', () => {
   it('returns the middle value of a two-dimensional array', () => {
@@ -36,5 +46,31 @@ describe('String manipulation', () => {
     expect(includesAllLetters('Pack my box with five dozen liquor jugs')).toBe(true)
     expect(includesAllLetters('This string does not contain all letters')).toBe(false)
     expect(includesAllLetters('')).toBe(false)
+  })
+  it('Should return a CamelCased string', function () {
+    expect(camelCase('')).toEqual('')
+    expect(camelCase('test case')).toEqual('TestCase')
+    expect(camelCase('camel case method')).toEqual('CamelCaseMethod')
+    expect(camelCase('say hello ')).toEqual('SayHello')
+    expect(camelCase(' camel case word')).toEqual('CamelCaseWord')
+  })
+})
+describe('Which are in?', () => {
+  it('Basic tests', () => {
+    let a2 = ['lively', 'alive', 'harp', 'sharp', 'armstrong']
+    let a1 = ['arp', 'live', 'strong']
+    expect(inArray(a1, a2)).toEqual(['arp', 'live', 'strong'])
+    a1 = ['xyz', 'live', 'strong']
+    expect(inArray(a1, a2)).toEqual(['live', 'strong'])
+    a1 = ['live', 'strong', 'arp']
+    expect(inArray(a1, a2)).toEqual(['arp', 'live', 'strong'])
+  })
+})
+describe('Bouncing balls', () => {
+  it('Basic tests', () => {
+    expect(bouncingBall(3.0, 0.66, 1.5)).toEqual(3)
+    expect(bouncingBall(30.0, 0.66, 1.5)).toEqual(15)
+    expect(bouncingBall(30, 0.75, 1.5)).toEqual(21)
+    expect(bouncingBall(30, 0.4, 10)).toEqual(3)
   })
 })
